@@ -1,0 +1,64 @@
+{
+  "status": "blocked_render_tools_unavailable",
+  "repository": "https://github.com/Cesarbmm/ExamenRI",
+  "tested_code_commit": "f3394b97ab9debbf7dd6c756a033da639db7fec3",
+  "target_service": {
+    "name": "examenri",
+    "url": "https://examenri.onrender.com",
+    "service_id": null,
+    "plan": "free",
+    "created_or_modified": false
+  },
+  "render_access": {
+    "integration_installed": true,
+    "render_tools_available_in_current_execution": false,
+    "authenticated_cli_available": false,
+    "api_key_available": false
+  },
+  "deployment_triggered": false,
+  "deployed_commit": null,
+  "public_checks": {
+    "GET /health": {
+      "status": "not_verified",
+      "observed": "httpx.ReadTimeout on public HTTPS requests"
+    },
+    "POST /search bm25": "pending deployment access",
+    "POST /search tfidf": "pending deployment access",
+    "top_k 1 and 10": "pending deployment access",
+    "invalid model, empty query, malformed JSON": "pending deployment access",
+    "smoke_test": "pending deployment access",
+    "cold_start": "pending deployment access"
+  },
+  "local_clean_clone": {
+    "python": "3.11.0",
+    "production_install": "passed",
+    "pip_check": "passed",
+    "documents": 5183,
+    "queries": 1109,
+    "qrels_test": 339,
+    "test_queries": 300,
+    "metrics_equal_original": true,
+    "runs": [
+      {
+        "startup_seconds": 13.27,
+        "rss_mib": 313.69,
+        "http_checks_passed": 12
+      },
+      {
+        "startup_seconds": 13.25,
+        "rss_mib": 314.83,
+        "http_checks_passed": 12
+      }
+    ]
+  },
+  "pytest": "21 passed, 1 nonblocking Starlette TestClient deprecation warning",
+  "protected_files_unchanged": {
+    "notebooks/examen1bim_SCIFACT.ipynb": "1742adcd871fe9057cf3aa4bc70335ab85434a2557b809f212c02ed4eddf7ec0",
+    "src/retrieval.py": "a1aaf9e26f435e6dd5a72fd4fab7c5b1c75e64586a078be6947b1280a0efdc9e",
+    "src/preprocess.py": "1a33d4a50bf52c76ce0ca2b7714d648f68c7dee7034733a75e40ca082b86598d",
+    "src/evaluation.py": "c0f81b3f4ea62d992361002f025fbcc9a087257d0a1aaa4a9ab79b46dac9b8ca",
+    "results/metrics_test.json": "701a368806d1c05cba0caa0352a82deebb16896ec55e8b28f12c90cea6215ee1"
+  },
+  "swagger": "disabled by existing API; local GET /docs returns 404",
+  "next_action": "Start a new message with the installed Render integration selected so its service-management tools are available."
+}
