@@ -1,0 +1,16 @@
+# Referencia del servicio EXISTENTE. No crear ni sincronizar un Blueprint.
+# Actualizar examenri en su panel o por API, verificando primero su ID y URL.
+services:
+  - type: web
+    name: examenri
+    runtime: python
+    plan: free
+    repo: https://github.com/Cesarbmm/ExamenRI
+    branch: main
+    autoDeploy: true
+    buildCommand: python -m pip install -r requirements.txt && python -m scripts.prepare_data
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
