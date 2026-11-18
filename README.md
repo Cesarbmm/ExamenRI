@@ -81,7 +81,7 @@ Si la consulta no contiene términos del vocabulario, devuelve `results: []`.
 ## Publicar en Render
 
 El destino es el **Web Service existente `examenri`**, con URL asignada
-`https://examenri.onrender.com`, y el repositorio
+`https://examenri-14iv.onrender.com`, y el repositorio
 `https://github.com/Cesarbmm/ExamenRI`. **No crear otro servicio ni un Blueprint.**
 `render.yaml` documenta la configuración; su presencia en el repositorio no
 actualiza por sí sola un servicio creado manualmente.
@@ -110,7 +110,7 @@ Las dependencias de Jupyter y pytest solo se instalan para desarrollo.
 Verificar build y runtime en los logs de Render y comprobar la URL real:
 
    ```powershell
-   python -m scripts.smoke_test https://examenri.onrender.com
+   python -m scripts.smoke_test https://examenri-14iv.onrender.com
    ```
 
 Los servicios gratuitos de Render entran en reposo tras 15 minutos sin tráfico;

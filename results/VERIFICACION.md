@@ -60,12 +60,16 @@ Recall@10 usa el total de relevantes de cada consulta. NDCG@10 usa ganancias
 | P2 | `app/main.py`, coerción de `top_k` | Se rechazan booleanos, cadenas y flotantes; solo se aceptan enteros de 1 a 100. |
 | P2 | `README.md`, nombre de notebook inexistente | Se corrigió la ruta y se documentó la ejecución completa con Python 3.11. |
 
-## Pendientes
+## Servicio público
 
-1. **URL pública:** no desplegada ni verificada. Las comprobaciones HTTP reales
-   fueron locales; falta cumplir ese entregable del examen.
-2. **Aviso no bloqueante:** Starlette anuncia la deprecación de `httpx` para su
-   `TestClient`. Las 21 pruebas pasan y el servicio HTTP real funciona. Se conserva
-   el aviso en `verification.json`; no se alteraron las dependencias del examen.
+Servicio en Render: https://examenri-14iv.onrender.com.
+`GET /health` devuelve HTTP 200 y confirma los 5.183 documentos SCIFACT.
+`POST /search` funciona con BM25 y TF-IDF: IDs originales, puntuaciones finitas,
+orden descendente, sin duplicados y límites `top_k=1/5/10` comprobados.
+Las entradas inválidas devuelven 422 y `scripts.smoke_test` pasa contra esa URL.
+
+**Aviso no bloqueante:** Starlette anuncia la deprecación de `httpx` para su
+`TestClient`. Las 21 pruebas pasan y el servicio HTTP real funciona. Se conserva
+el aviso en `verification.json`; no se alteraron las dependencias del examen.
 
 No quedan fallos de ejecución, de recuperación ni de contrato JSON observados.

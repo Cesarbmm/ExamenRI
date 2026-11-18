@@ -19,5 +19,4 @@ results/*.csv
 !results/metrics_test.json
 !results/metrics_per_query_test.csv
 !results/test_queries_evaluated.csv
-!results/deployment_public.json
 data/*.jsonl
